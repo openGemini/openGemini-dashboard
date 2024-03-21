@@ -62,6 +62,22 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: "/slow-query",
+    component: Layouts,
+    redirect: "/slow-query/index",
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/slow-query/index.vue"),
+        name: "SlowQuery",
+        meta: {
+          title: "慢查询",
+          elIcon: "AlarmClock"
+        }
+      }
+    ]
+  },
+  {
     path: "/link",
     meta: {
       title: "外链",
